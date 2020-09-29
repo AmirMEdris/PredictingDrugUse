@@ -6,7 +6,7 @@ Data/
 
 # C extensions
 *.so
-.csv
+*.csv
 # Distribution / packaging
 .Python
 build/
