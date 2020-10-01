@@ -3,8 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 Data/
-.DS_Store
-.pkl
+*.DS_Store
+*.pkl
 # C extensions
 *.so
 *.csv
