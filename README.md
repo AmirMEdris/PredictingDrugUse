@@ -77,7 +77,7 @@ My last attempt to improve my model was to make a third dtc with the best models
 
 ### Final model
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/NormalDistPersonalityScoresParams.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/ConfusionMatrix.png)
 After fitting the adaboost I threw all to models together into one classifier and was able to get the Above on the unknown observations which are close to what the goal prediciton.
 
 # Conclusion
