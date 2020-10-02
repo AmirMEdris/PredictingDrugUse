@@ -38,9 +38,14 @@ and calculated an avg where I considered above 3 high risk and below 3 low risk.
 ### What does the Average Sample for our Stimulant users look like?
 
 The seven different metrics of personality for the most part had strong correlations with the data that lined up with what I would expect from the dataset 
+
+
+
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowAnxious.png)
 
 As the average Nscore increases the the estimated time since usage of the three major groups of drug that we checked are increasing. Nscore is a metric for neuroticism, in other words as anxiety increases drug use increases which is a relationship that is accurate based on what we know of drug use.
+
+
 
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowCarefulYouAre.png)
 
@@ -50,12 +55,18 @@ Cscore is a measure for careful and individual is, which makes sense because thi
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowCooperativeYouAre.png)
 
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowOpenToNewExperiencesYouAre.png)
+
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/LesserStimulantUsageByStimulant.png)
 
 The only stimulant class drug that we didnt consider in our target vairiable that seems to be significant is nicotine. The others seem to just be popular all around.
 
+
+
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/NormalDistPersonalityScoresParams.png)
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/ControlParams.png)
+
+
+
 Finally the distribution of our personality scores seem to be normal 
 
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/PoissonDistOfDrugUsers.png)
@@ -78,6 +89,8 @@ My last attempt to improve my model was to make a third dtc with the best models
 ### Final model
 
 ![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/ConfusionMatrix.png)
+
+
 After fitting the adaboost I threw all to models together into one classifier and was able to get the Above on the unknown observations which are close to what the goal prediciton.
 
 # Conclusion
