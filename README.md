@@ -37,13 +37,31 @@ and calculated an avg where I considered above 3 high risk and below 3 low risk.
 
 ### What does the Average Sample for our Stimulant users look like?
 The seven different metrics of personality for the most part had strong correlations with the data that lined up with what I would expect from the dataset 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/DrugUseByHowCarefullYouAre.png?raw=true)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/DrugUseByHowAnxious.png?raw=true)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/DrugUseByHowCarefulYouAre.png?raw=true)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/DrugUseByHowCarefullYouAre.png?raw=true)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/DrugUseByHowCooperativeYouAre.png?raw=true)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/DrugUseByHowExtravertedYouAre.png?raw=true)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/DrugUseByHowOpenToNewExperiencesYouAre.png?raw=true)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/edit/master/LesserStimulantUsageByStimulant.png?raw=true)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowAnxious.png)
+As the average Nscore increases the the estimated time since usage of the three major groups of drug that we checked are increasing. Nscore is a metric for neuroticism, in other words as anxiety increases drug use increases which is a relationship that is accurate based on what we know of drug use.
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowCarefulYouAre.png)
+Cscore is a measure for careful and individual is, which makes sense because this graph shows a negative correlation
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowExtravertedYouAre.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowCooperativeYouAre.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowOpenToNewExperiencesYouAre.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/LesserStimulantUsageByStimulant.png)
+the only stimulant class drug that we didnt consider in our target vairiable that seems to be significant is nicotine. The others seem to just be popular all around.
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/NormalDistPersonalityScoresParams.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/ControlParams.png)
+Finally the distribution of our personality scores seem to be normal 
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/PoissonDistOfDrugUsers.png)
+although our drug use columns are skewed which is expected because we wouldnt assume the amount of potential addicts is normally distributed because its a minority of people that fall into this category. Even if thats porportional we still will need to balance the data because a model will most likely just predict the negative class most of the time and for our model to be good it should have as high percision and recal for the high class as possible.
 
+## How do we get the best metrics for our model
+
+### Forgetting about my third class
+I did alot of things to try and get the model to predict well on the minority class. Initially I was actually doing a multiclassification for none,low,high but after realizing that a none prediction isnt ideal cause there should never be no chance for a patient in this case, the model couldnt differentiate between high and none very well which was the worst case in my opinion so I switched to binary classification. 
+### Fitting a diverse range of so that each can capture a different aspect of the class
+The first thing I did was try to fit an ensemble voting classifier with a semi diverse set of models to capture the different points. While this did result in decent f1, even after messing with the class weights parameter the voting classifier didnt seem to care about the high class so I decided to repeat the voting classifier with polynomial terms and see if I could get a better prediction with that one. Initially the poly classifier had overfit so I decided to use sklearn.pipeline to combine the poly classifiers with standard classifiers. this was whern I started to predict about 50% of the positive class correct. 
+### Grid searching
+My computer wasnt Ideal and gridsearching with multiple random forests and decision trees was time consuming so I had to settle for some sub optimal fits for the sake of time. At this point I was still only getting about 40-60% of the high class while predicting about twice that actual.
+### Ada boost
+My last attempt to improve my model was to make a third dtc with the best models from both the poly tree and standard tree(which I could do cause of pipelines) and fit the models with an adaboost.
+### Final model
+after fitting the adaboost I threw all to models together into one classifier and was able to get the metrics in my slide.
 
