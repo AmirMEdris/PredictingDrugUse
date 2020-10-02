@@ -76,8 +76,11 @@ My computer wasnt Ideal and gridsearching with multiple random forests and decis
 My last attempt to improve my model was to make a third dtc with the best models from both the poly tree and standard tree(which I could do cause of pipelines) and fit the models with an adaboost.
 
 ### Final model
-After fitting the adaboost I threw all to models together into one classifier and was able to get the metrics in my slide.
+
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/NormalDistPersonalityScoresParams.png)
+After fitting the adaboost I threw all to models together into one classifier and was able to get the Above on the unknown observations which are close to what the goal prediciton.
 
 # Conclusion
+
 Alot of things in this project couldve been orginized better. I skipped ahead to modelling too soon and the structure of my overall classifier I very hard to keep track of(as you can see in the notebooks) that being said
 we were able to correctly predict most of the positive class and I believe that you could get the data that we use(except drug use of course) from patients reasonably. If a larger scale dataset was made and questioned things specifically for a model like this, I believe you would be able to make a suplementary program for doctors that, when you insert a patients information and the drug you are considering perscribing, will give a nice heads up of the possible risks so they can worry less and the right people can benifet from getting the right medicine for them.
