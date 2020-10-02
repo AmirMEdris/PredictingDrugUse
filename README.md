@@ -24,7 +24,7 @@ The independant variables standardized in the form of distance from mean and teh
 time since last used drug. Of the Dataset measured personality using the big 5 personality metrics, an impulsivity metric,
 and a sensation seeking metric.
 
-#Properly Structuring Our Data for the task at hand
+# Properly Structuring Our Data for the task at hand
 Since the data was scaled and I wanted to be able to get some interpretable data for visualizations before modeling 
 I made a dataframe that reversed the data back to before it was scaled so that I could have that to work with as well.
 For my target variable I decided to use Stimulants simply because of my prior knowledge of their affect on the
@@ -33,4 +33,4 @@ because both are components resulting form how an individuals brains handle dopa
 for later use in our model of the 16 columns I chose to use the columns that I considered extreme examples of stimulant use
 and calculated an avg where I considered above 3 high risk and below 3 low risk.
 
-#What does the Average Sample for our Stimulant users look like?
+# What does the Average Sample for our Stimulant users look like?
