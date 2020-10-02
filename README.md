@@ -1,6 +1,6 @@
-#Predicting Abusive Drug Use In Patients
+# Predicting Abusive Drug Use In Patients
 
-##Intro
+## Intro
 
 Due to the addictive nature of certain drugs, doctors often have to consider risk vs 
 reward before perscribing patients a drug that has potential for abuse. My goal was to use 
@@ -8,7 +8,7 @@ this dataset of personality metrics and self reported drug use to illustrate the
 possibility of making a prediction software to aid doctors in accurately gauging if the risk of giving a 
 specific individual a certain drug is high or low.
 
-#Goals
+# Goals
 Make a meaningful target value for high/low risk from the potential list of drugs present
 
 Understand the importance of our Features
@@ -18,7 +18,7 @@ Identify what the personality profile for the observations we would consider hig
 Make a classification model that can accurately capture the majority of positive cases for the 
 aforementioned target variable despite the disproportionate instances of high to low risk in our data.
 
-#Understanding Our Data
+# Understanding Our Data
 This dataset had 1885 observations and 32 columns of which 16 were metrics for drug consumption.
 The independant variables standardized in the form of distance from mean and teh dependant variable had six classes for
 time since last used drug. Of the Dataset measured personality using the big 5 personality metrics, an impulsivity metric,
