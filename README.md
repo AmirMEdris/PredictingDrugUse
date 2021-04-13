@@ -41,35 +41,35 @@ The seven different metrics of personality for the most part had strong correlat
 
 
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowAnxious.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/DrugUseByHowAnxious.png)
 
 As the average Nscore increases the the estimated time since usage of the three major groups of drug that we checked are increasing. Nscore is a metric for neuroticism, in other words as anxiety increases drug use increases which is a relationship that is accurate based on what we know of drug use.
 
 
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowCarefulYouAre.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/DrugUseByHowCarefulYouAre.png)
 
 Cscore is a measure for careful and individual is, which makes sense because this graph shows a negative correlation
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowExtravertedYouAre.png)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowCooperativeYouAre.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/pics/DrugUseByHowExtravertedYouAre.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/DrugUseByHowCooperativeYouAre.png)
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/DrugUseByHowOpenToNewExperiencesYouAre.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/DrugUseByHowOpenToNewExperiencesYouAre.png)
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/LesserStimulantUsageByStimulant.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/LesserStimulantUsageByStimulant.png)
 
 The only stimulant class drug that we didnt consider in our target vairiable that seems to be significant is nicotine. The others seem to just be popular all around.
 
 
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/NormalDistPersonalityScoresParams.png)
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/ControlParams.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/NormalDistPersonalityScoresParams.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/ControlParams.png)
 
 
 
 Finally the distribution of our personality scores seem to be normal 
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/PoissonDistOfDrugUsers.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/PoissonDistOfDrugUsers.png)
 
 Although our drug use columns are skewed which is expected because we wouldnt assume the amount of potential addicts is normally distributed because its a minority of people that fall into this category. Even if thats porportional we still will need to balance the data because a model will most likely just predict the negative class most of the time and for our model to be good it should have as high percision and recal for the high class as possible.
 
@@ -88,7 +88,7 @@ My last attempt to improve my model was to make a third dtc with the best models
 
 ### Final model
 
-![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/ConfusionMatrix.png)
+![alt text](https://github.com/AmirMEdris/PredictingDrugUse/blob/master/pics/ConfusionMatrix.png)
 
 
 After fitting the adaboost I threw all to models together into one classifier and was able to get the Above on the unknown observations which are close to what the goal prediciton.
