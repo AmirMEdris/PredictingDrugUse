@@ -20,7 +20,7 @@ import sklearn
 
 
 def callback():
-    model = pkl.load(open('model.pkl', 'rb'))
+    model = pkl.load(open('Models/vtc.pkl', 'rb'))
     X = pkl.load(open('AgeandEdu.pkl','rb'))
     age,education = X[0],X[1]
     Nscore = pkl.load(open('NscoreTest.pkl', 'rb'))
@@ -40,7 +40,7 @@ def callback():
     data=np.array(data)
     strdata = ['age','education','Nscore','Escore','Oscore','Ascore','Cscore','Impulse'
         ,'Sensationseeking','Alcohol','Caffeine','Chocolate','Nicotine']
-    print(list(zip(strdata,data)))
+    print(list(zip(strdata,data)),model)
     prediction = model.predict(data.reshape(1,-1))
     lbl2 = ttk.Label(root, text=f'{list(zip(strdata,data))}').pack()
     lbl3 = ttk.Label(root, text=f'Patient with above inputs is projected as a {prediction} risk for abuse of stimulant drugs').pack()
