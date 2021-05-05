@@ -3,13 +3,17 @@ from tkinter import ttk
 import pickle as pkl
 
 def callback():
-        x = [v1.get() *correlation1,v2.get() * correlation2, v3.get()* correlation3
-        ,v4.get()* correlation4,v5.get()* correlation5,v6.get()* correlation6
-        ,v7.get()* correlation7,v8.get()* correlation8
-        ,v9.get()* correlation9,v10.get()* correlation10]
-        X = sum(x) + 30
+        x = [mapvalue(v1.get()) *correlation1,mapvalue(v2.get()) * correlation2, mapvalue(v3.get())* correlation3
+        ,mapvalue(v4.get())* correlation4,mapvalue(v5.get())* correlation5,mapvalue(v6.get())* correlation6
+        ,mapvalue(v7.get())* correlation7,mapvalue(v8.get())* correlation8
+        ,mapvalue(v9.get())* correlation9,mapvalue(v10.get())* correlation10]
+        X = sum(x)+30
+        print(X)
         root.destroy()
-        pkl.dump(X, open('CscoreTest.pkl', 'wb'))
+        pkl.dump(X, open('AscoreTest.pkl', 'wb'))
+def mapvalue(number):
+    values= {1:-2,2:-1,3:0,4:1,5:2}
+    return values[number]
 def Question(question,corr):
     v = IntVar()
     correlation = corr
@@ -17,12 +21,12 @@ def Question(question,corr):
     combobox = ttk.Combobox(root, textvariable = v,values=(1,2,3,4,5),state='readonly')
     return v,correlation,lblq,combobox
 if __name__ == "__main__":
-        qs = ['Am always prepared.' ,'Leave my belongings around.'
-    ,'Pay attention to details.','Make a mess of things.'
-    ,'Get chores done right away.','Often forget to put things back in their proper place.'
-    ,'Like order.',"Shirk my duties."
-    ,"Follow a schedule.",'Am exacting in my work.']
-        cs = [1,-1,1,-1,1,-1,1,-1,1,1]
+        qs = ['Feel little concern for others' ,'Am interested in people'
+    ,'Insult people.','Sympathize with others feelings.'
+    ,'Am not interested in other peoples problems.','Have a soft heart.'
+    ,'Am not really interested in others.',"Take time out for others."
+    ,"Feel others' emotions",'Make people feel at ease.']
+        cs = [-1,1,-1,1,-1,1,-1,1,1,1]
         root = Tk()
         lbltitle = ttk.Label(text='Select How well a statement describes you\nwhere 5 is accurate and 1 is innacurate',font = (('Arial'),22)).pack()
 
@@ -59,7 +63,6 @@ if __name__ == "__main__":
         button = ttk.Button(root,text='Enter',command=callback).pack()
 
 
-        root.geometry('500x600')
-        root.title('Ocean Survey: Conscientiousness')
-
+        root.geometry('850x850')
+        root.title('Ocean Survey: Agreeableness')
         root.mainloop()

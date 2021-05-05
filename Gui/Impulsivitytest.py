@@ -61,5 +61,5 @@ if __name__ == "__main__":
 
         button = ttk.Button(root,text='Enter',command=callback).pack()
         root.title('Impulsivity Metric Survey')
-        root.geometry('750x600')
+        root.geometry('850x850')
         root.mainloop()

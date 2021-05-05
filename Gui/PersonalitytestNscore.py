@@ -3,13 +3,17 @@ from tkinter import ttk
 import pickle as pkl
 
 def callback():
-        x = [v1.get() *correlation1,v2.get() * correlation2, v3.get()* correlation3
-        ,v4.get()* correlation4,v5.get()* correlation5,v6.get()* correlation6
-        ,v7.get()* correlation7,v8.get()* correlation8
-        ,v9.get()* correlation9,v10.get()* correlation10]
-        X = sum(x) + 30
+        x = [mapvalue(v1.get()) *correlation1,mapvalue(v2.get()) * correlation2, mapvalue(v3.get())* correlation3
+        ,mapvalue(v4.get())* correlation4,mapvalue(v5.get())* correlation5,mapvalue(v6.get())* correlation6
+        ,mapvalue(v7.get())* correlation7,mapvalue(v8.get())* correlation8
+        ,mapvalue(v9.get())* correlation9,mapvalue(v10.get())* correlation10]
+        X = sum(x)+30
+        print(X)
         root.destroy()
         pkl.dump(X, open('NscoreTest.pkl', 'wb'))
+def mapvalue(number):
+    values= {1:-2,2:-1,3:0,4:1,5:2}
+    return values[number]
 def Question(question,corr):
     v = IntVar()
     correlation = corr

@@ -1,16 +1,21 @@
 from tkinter import *
 from tkinter import ttk
 import pickle as pkl
-
 def callback():
-        x = [v1.get() *correlation1,v2.get() * correlation2, v3.get()* correlation3
-        ,v4.get()* correlation4,v5.get()* correlation5,v6.get()* correlation6
-        ,v7.get()* correlation7,v8.get()* correlation8
-        ,v9.get()* correlation9,v10.get()* correlation10]
-        X = sum(x) + 30
+        x = [mapvalue(v1.get()) *correlation1,mapvalue(v2.get()) * correlation2, mapvalue(v3.get())* correlation3
+        ,mapvalue(v4.get())* correlation4,mapvalue(v5.get())* correlation5,mapvalue(v6.get())* correlation6
+        ,mapvalue(v7.get())* correlation7,mapvalue(v8.get())* correlation8
+        ,mapvalue(v9.get())* correlation9,mapvalue(v10.get())* correlation10]
+        X = sum(x)+30
+        print(X)
         root.destroy()
-        pkl.dump(X, open('AscoreTest.pkl', 'wb'))
-
+        pkl.dump(X, open('OscoreTest.pkl', 'wb'))
+def mapvalue(number):
+    values= {1:-2,2:-1,3:0,4:1,5:2}
+    return values[number]
+def mapvalue(number):
+    values= {1:-2,2:-1,3:0,4:1,5:2}
+    return values[number]
 def Question(question,corr):
     v = IntVar()
     correlation = corr
@@ -18,15 +23,14 @@ def Question(question,corr):
     combobox = ttk.Combobox(root, textvariable = v,values=(1,2,3,4,5),state='readonly')
     return v,correlation,lblq,combobox
 if __name__ == "__main__":
-        qs = ['Feel little concern for others' ,'Am interested in people'
-    ,'Insult people.','Sympathize with others feelings.'
-    ,'Am not interested in other peoples problems.','Have a soft heart.'
-    ,'Am not really interested in others.',"Take time out for others."
-    ,"Feel others' emotions",'Make people feel at ease.']
-        cs = [-1,1,-1,1,-1,1,-1,1,1,1]
+        qs = ['Have a rich vocabulary' ,'Have difficulty understanding abstract ideas.'
+    ,'Have a vivid imagination.','Am not interested in abstract ideas.'
+    ,'Have excellent ideas.','Do not have a good imagination.'
+    ,'Am quick to understand things.',"Use difficult words."
+    ,"Spend time reflecting on things.",'Am full of ideas.']
+        cs = [1,-1,1,-1,1,-1,1,1,1,1]
         root = Tk()
         lbltitle = ttk.Label(text='Select How well a statement describes you\nwhere 5 is accurate and 1 is innacurate',font = (('Arial'),22)).pack()
-
         v1,correlation1,lblq1,combobox1 = Question(qs[0],cs[0])
         v2,correlation2,lblq2,combobox2 = Question(qs[1],cs[1])
         lblq1.pack()
@@ -61,5 +65,6 @@ if __name__ == "__main__":
 
 
         root.geometry('500x600')
-        root.title('Ocean Survey: Agreeableness')
+        root.title('Ocean Survey: Openness')
+
         root.mainloop()
